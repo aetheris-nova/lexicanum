@@ -1,0 +1,7 @@
+@import "../theme/palette";
+
+.book-search {
+  input {
+    background-color: map-get($beige-palette, 600);
+  }
+}
