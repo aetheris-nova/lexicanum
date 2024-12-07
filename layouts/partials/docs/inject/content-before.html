@@ -2,3 +2,8 @@
 {{ if eq .Type "decree"  }}
 {{- partial "decree/header" .Page -}}
 {{ end }}
+
+<!-- ordo pages -->
+{{ if eq .Type "ordo"  }}
+{{- partial "ordo/header" .Page -}}
+{{ end }}

@@ -1,33 +1,39 @@
 <!-- get all active ordos -->
-{{ $ordos := where (where .Page.Sections "Type" "ordos") ".Params.status" "active" }}
+{{ $ordos := where (where .Page.RegularPages "Type" "ordo") ".Params.status" "active" }}
 
 {{ if gt (len $ordos) 0 }}
 <table>
   <thead>
   <tr>
     <th>Name</th>
-    <th>Founding</th>
+    <th>Founded By</th>
+    <th>Founding Date</th>
     <th>Contract</th>
-    <th>By Decree</th>
   </tr>
   </thead>
 
   <tbody>
   {{ range $ordos }}
-  {{ $decreedByURL := printf "decrees/%s" .Params.founded_by | relURL }}
+  {{ $foundedByURL := printf "decrees/%s" .Params.founded_by | relURL }}
   <tr>
     <td>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
     </td>
 
-    <td>{{ .Params.founding }}</td>
-
-    <td>{{ .Params.contract }}</td>
-
     <td>
-      <a href="{{ $decreedByURL }}">
+      <a href="{{ $foundedByURL }}">
         {{ .Params.founded_by }}
       </a>
+    </td>
+
+    <td>{{ .Params.founding }}</td>
+
+    <td>
+      {{if .Params.dissolved_by }}
+      {{ .Params.contract }}
+      {{else}}
+      -
+      {{end}}
     </td>
   </tr>
   {{ end }}
