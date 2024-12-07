@@ -1,12 +1,10 @@
 ---
-title: Ordo Administratorum
-description: The stewards of Aetheris Nova that enact the sacred will of the organization.
-type: ordos
-founding: 0
 contract: "-"
+description: The stewards of Aetheris Nova that enact the sacred will of the organization.
+founding: 0
 status: active
-weight: 1
-bookCollapseSection: true
+title: Ordo Administratorum
+type: ordos
 ---
 
 # {{< pages/title >}}
@@ -15,7 +13,7 @@ bookCollapseSection: true
 
 ## Exordium
 
-{{< components/dropcap-paragraph "The **Ordo Administratorum** stands at the heart of Aetheris Nova, its members the stewards of order, governance, and the will of Aetheris Nova." >}}
+The **Ordo Administratorum** stands at the heart of Aetheris Nova, its members the stewards of order, governance, and the will of Aetheris Nova.
 
 Bound by their solemn oaths, they ensure the will of the collective is enacted and that the machinations of the organization run with unwavering precision.
 

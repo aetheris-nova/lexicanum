@@ -1,11 +1,11 @@
 ---
-title: Ordos
 description: The Ordos of Aetheris Nova represent a pillar of the collective, each equal in voice & influence.
+title: Ordos
 ---
 
 # {{< pages/title >}}
 
-{{< components/dropcap-paragraph "The **Ordos of Aetheris** Nova stand united in purpose, each devoted to the greater goal of unlocking the mysteries of the cosmos." >}}
+{{< components/dropcap-paragraph "The Ordos of Aetheris Nova stand united in purpose, each devoted to the greater goal of unlocking the mysteries of the cosmos." >}}
 
 Each Ordo fulfills a critical function in the pursuit of knowledge and no Ordo holds supremacy over another, for each is integral to the overarching vision of exploration, discovery, and enlightenment.
 
