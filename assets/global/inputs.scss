@@ -1,0 +1,8 @@
+@import "../theme/palette";
+
+input {
+  &:focus,
+  &:active {
+    outline: 1px solid $ruby-red-color;
+  }
+}

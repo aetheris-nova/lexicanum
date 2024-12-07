@@ -1,0 +1,8 @@
+@import "../theme/palette";
+
+:root {
+  --body-background: #{map-get($beige-palette, 500)};
+  --body-font-color: #{map-get($brown-palette, 500)};
+  --color-link: #{$ruby-red-color};
+  --color-visited-link: #{$chocolate-chili-color};
+}
