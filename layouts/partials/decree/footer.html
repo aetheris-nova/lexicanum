@@ -1,0 +1,22 @@
+{{ $transactionHash := .Page.Params.transaction_hash }}
+
+{{ if $transactionHash }}
+{{ $transactionURL := printf "%s/tx/%s" .Site.Params.blockExplorerBaseURL $transactionHash }}
+<div class="decree__footer">
+  <p>
+    <strong>
+      In Witness Whereof, this decree is sealed and inscribed within the Lexicanum Aetheris, eternal testament to its enactment.
+    </strong>
+  </p>
+
+  <p>
+    <strong>Enacted by:</strong> <a href="{{ $transactionURL }}" target="_blank">{{ $transactionHash }}</a>
+  </p>
+
+  <p>
+    <strong>
+      By the authority vested in us, the Aetherii, this decree is proclaimed.
+    </strong>
+  </p>
+</div>
+{{ end }}

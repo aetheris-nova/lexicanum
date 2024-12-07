@@ -1,0 +1,58 @@
+{{ $dissolvedBy := .Page.Params.dissolved_by }}
+{{ $foundedBy := .Page.Params.founded_by }}
+{{ $foundedByURL := printf "decrees/%s" $foundedBy | relURL }}
+{{ $founding := .Page.Params.founding }}
+{{ $contract := .Page.Params.contract }}
+{{ $status := .Page.Params.status }}
+
+<h1>{{ .Title }}</h1>
+
+<div class="ordo__header">
+  <table>
+    <tbody>
+      <tr>
+        <th>Founded By</th>
+        <td>
+          <a href="{{ $foundedByURL }}">
+            {{ $foundedBy }}
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Founding</th>
+        <td>{{ $founding }}</td>
+      </tr>
+
+      <tr>
+        <th>Contract</th>
+        {{if $contract }}
+        <td>{{ $contract }}</td>
+        {{else}}
+        <td>-</td>
+        {{end}}
+      </tr>
+
+      <tr>
+        <th>Status</th>
+        {{ if $status }}
+        <td>{{ $status | title }}</td>
+        {{ else }}
+        <td>Unknown</td>
+        {{ end }}
+      </tr>
+
+      {{if $dissolvedBy}}
+      {{ $dissolvedByURL := printf "decrees/%s" .Params.dissolved_by | relURL }}
+      <tr>
+        <th>Dissolved By</th>
+        <td>
+          <a href="{{ $dissolvedByURL }}">
+            {{ $dissolvedBy }}
+          </a>
+        </td>
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+</div>

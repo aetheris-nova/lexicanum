@@ -1,0 +1,44 @@
+<!-- get all active ordos -->
+{{ $ordos := where (where .Page.RegularPages "Type" "ordo") ".Params.status" "active" }}
+
+{{ if gt (len $ordos) 0 }}
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Founded By</th>
+    <th>Founding Date</th>
+    <th>Contract</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {{ range $ordos }}
+  {{ $foundedByURL := printf "decrees/%s" .Params.founded_by | relURL }}
+  <tr>
+    <td>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </td>
+
+    <td>
+      <a href="{{ $foundedByURL }}">
+        {{ .Params.founded_by }}
+      </a>
+    </td>
+
+    <td>{{ .Params.founding }}</td>
+
+    <td>
+      {{if .Params.dissolved_by }}
+      {{ .Params.contract }}
+      {{else}}
+      -
+      {{end}}
+    </td>
+  </tr>
+  {{ end }}
+  </tbody>
+</table>
+{{ else }}
+<p>No Ordos found.</p>
+{{ end }}

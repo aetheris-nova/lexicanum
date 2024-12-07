@@ -30,5 +30,10 @@ $beige-palette: (
 
 $black-color: #000000;
 $chocolate-chili-color: #b03a2e;
+$hyper-blue-color: #005B96;
 $ruby-red-color: #9b111e;
 $white-color: #FFFFFF;
+
+// borders
+
+$default-border-color: #{map-get($brown-palette, 500)};

@@ -1,0 +1,33 @@
+<!-- get all obsolete decrees -->
+{{ $decrees := where (where .Page.RegularPages "Type" "decree") ".Params.status" "obsolete" }}
+
+{{ if gt (len $decrees) 0 }}
+<table>
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>ID</th>
+    <th>Superseded By</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {{ range $decrees }}
+  <tr>
+    <td>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </td>
+
+    <td>{{ .Description }}</td>
+
+    <td>{{ .Params.id }}</td>
+
+    <td>{{ .Params.superseded_by }}</td>
+  </tr>
+  {{ end }}
+  </tbody>
+</table>
+{{ else }}
+<p>No decrees found.</p>
+{{ end }}

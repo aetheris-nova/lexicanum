@@ -1,0 +1,11 @@
+$margin: 3rem;
+
+.decree {
+  &__footer {
+    margin-top: $margin;
+  }
+
+  &__header {
+    margin-bottom: $margin;
+  }
+}

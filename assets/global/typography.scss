@@ -1,6 +1,12 @@
+@import "../_theme/palette";
+
 body {
-  font-family: 'Cinzel', sans-serif;
+  font-family: "IM Fell DW Pica", serif;
   font-weight: 500;
+}
+
+code {
+  font-family: "Syne Mono", monospace;
 }
 
 h1,
@@ -9,5 +15,14 @@ h3,
 h4,
 h5,
 h6 {
+  color: $ruby-red-color;
   font-weight: 500;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  border-bottom: 3px solid $ruby-red-color;
 }

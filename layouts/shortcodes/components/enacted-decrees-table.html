@@ -1,0 +1,43 @@
+<!-- get all enacted decrees -->
+{{ $decrees := where (where .Page.RegularPages "Type" "decree") ".Params.status" "enacted" }}
+
+{{ if gt (len $decrees) 0 }}
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Transaction Hash</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {{ range $decrees }}
+  {{ $transactionHash := .Params.transaction_hash }}
+  {{ $transactionURL := printf "%s/tx/%s" .Site.Params.blockExplorerBaseURL $transactionHash }}
+  <tr>
+    <td>{{ .Params.id }}</td>
+
+    <td>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </td>
+
+    <td>{{ .Description }}</td>
+
+    <td>
+      {{ if $transactionHash }}
+      <a href="{{ $transactionURL }}" target="_blank">
+        {{ $transactionHash }}
+      </a>
+      {{ else }}
+      <span>-</span>
+      {{ end }}
+    </td>
+  </tr>
+  {{ end }}
+  </tbody>
+</table>
+{{ else }}
+<p>No decrees found.</p>
+{{ end }}
