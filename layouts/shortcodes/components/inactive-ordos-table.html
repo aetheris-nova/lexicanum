@@ -1,5 +1,5 @@
-<!-- get all active ordos -->
-{{ $ordos := where (where .Page.Sections "Type" "ordos") ".Params.status" "active" }}
+<!-- get all inactive ordos -->
+{{ $ordos := where (where .Page.Sections "Type" "ordos") ".Params.status" "inactive" }}
 
 {{ if gt (len $ordos) 0 }}
 <table>
@@ -29,5 +29,5 @@
   </tbody>
 </table>
 {{ else }}
-<p>No active Ordos found.</p>
+<p>No inactive Ordos found.</p>
 {{ end }}
