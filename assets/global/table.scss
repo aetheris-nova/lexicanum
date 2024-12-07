@@ -1,0 +1,32 @@
+@import "../_theme/palette";
+
+table,
+.markdown table {
+  border-collapse: collapse;
+  display: table;
+  text-align: left;
+  width: 100%;
+
+  tbody,
+  thead {
+    width: 100%;
+  }
+
+  tr {
+    background-color: transparent;
+
+    &:nth-child(2n) {
+      background-color: transparent;
+    }
+
+    td,
+    th {
+      border: 1px solid $default-border-color;
+      padding: 10px 15px;
+    }
+
+    td {
+      text-align: left;
+    }
+  }
+}

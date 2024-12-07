@@ -1,0 +1,27 @@
+{{ $founding := .Page.Params.founding }}
+{{ $contract := .Page.Params.contract }}
+{{ $status := .Page.Params.status }}
+{{ $statusStyle := replace (replace (lower .Page.Params.status) " " "-") "_" "-" }}
+
+<table>
+  <tbody>
+    <tr>
+      <th>Founding</th>
+      <td>{{ $founding }}</td>
+    </tr>
+
+    <tr>
+      <th>Contract</th>
+      <td>{{ $contract }}</td>
+    </tr>
+
+    <tr>
+      <th>Status</th>
+      {{ if $status }}
+      <td>{{ $status }}</td>
+      {{ else }}
+      <td>Unknown</td>
+      {{ end }}
+    </tr>
+  </tbody>
+</table>

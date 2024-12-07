@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Founding</th>
+      <th>Contract</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {{ range where .Page.Sections "Type" "ordos" }}
+    <tr>
+      <td>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </td>
+
+      <td>{{ .Params.founding }}</td>
+
+      <td>{{ .Params.contract }}</td>
+
+      <!-- convert the status to kebab-case and add as a css modifier -->
+      <td class="ordos-table__status--{{ replace (replace (lower .Params.status) " " "-") "_" "-" }}">{{ .Params.status }}</td>
+    </tr>
+  {{ end }}
+  </tbody>
+</table>

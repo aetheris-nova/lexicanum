@@ -1,4 +1,4 @@
-@import "../theme/palette";
+@import "../_theme/palette";
 
 :root {
   --body-background: #{map-get($beige-palette, 500)};
