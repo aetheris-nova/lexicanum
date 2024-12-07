@@ -19,8 +19,7 @@
 
       <td>{{ .Params.contract }}</td>
 
-      <!-- convert the status to kebab-case and add as a css modifier -->
-      <td class="ordos-table__status--{{ replace (replace (lower .Params.status) " " "-") "_" "-" }}">{{ .Params.status }}</td>
+      <td>{{ .Params.status }}</td>
     </tr>
   {{ end }}
   </tbody>
