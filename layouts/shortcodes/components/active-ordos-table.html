@@ -14,6 +14,7 @@
 
   <tbody>
   {{ range $ordos }}
+  {{ $decreedByURL := printf "decrees/%s" .Params.founded_by | relURL }}
   <tr>
     <td>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -23,7 +24,11 @@
 
     <td>{{ .Params.contract }}</td>
 
-    <td>{{ .Params.decree }}</td>
+    <td>
+      <a href="{{ $decreedByURL }}">
+        {{ .Params.founded_by }}
+      </a>
+    </td>
   </tr>
   {{ end }}
   </tbody>

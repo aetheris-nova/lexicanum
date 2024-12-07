@@ -1,6 +1,8 @@
 ---
 contract: "-"
 description: The stewards of Aetheris Nova that enact the sacred will of the organization.
+dissolved_by:
+founded_by: e4d2b435c5cd6d2ba4cbac328ad4eb36
 founding: 0
 status: active
 title: Ordo Administratorum
